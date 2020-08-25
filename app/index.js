@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import ReactDOM from "react-dom";
 
-function App () {
-  return (
-    <div className="App"> 123 </div>
-  );
-}
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
 
-export default App;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
