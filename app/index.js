@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import './index.scss'
+
 const name = 'Josh Perez';
 const element = <h1>Hello, {name}</h1>;
 
