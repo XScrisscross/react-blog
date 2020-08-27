@@ -15,44 +15,32 @@ module.exports = {
   optimization: {
     minimizer: [
       new TerserPlugin({
+        cache: true,
+        parallel: true,
+        extractComments: false,
         terserOptions: {
-          ecma: undefined,
-          parse: {},
           compress: {
             warnings: false,
             drop_console: true,
             pure_funcs: ['console.log']
-          },
-          mangle: true, // Note `mangle.properties` is `false` by default.
-          module: false,
-          output: null,
-          toplevel: false,
-          nameCache: null,
-          ie8: false,
-          keep_classnames: undefined,
-          keep_fnames: false,
-          safari10: false,
-        },
-      }),
+          }
+        }
+      })
     ],
     splitChunks: {
+      chunks: "all",
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: "chunk",
+          filename: 'vendors.js',
           priority: -10,
-          enforce: true
         },
-        common: {
-          name: "vendor",
+        default: {
           priority: -20,
-          filename: 'vendor/[name].[hash:8].vendor.min.js',
-          chunks: "all",
-          minChunks: 2
+          reuseExistingChunk: true,
+          filename: 'common.js'
         }
-      },
-      chunks: "all",
-      minSize: 40000
+      }
     }
   },
   entry: require('./webpack.base').entry,
@@ -64,11 +52,11 @@ module.exports = {
       cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../webapp')]
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    ...require('./webpack.base').plugins,
     new BundleAnalyzerPlugin({
       analyzerHost: '127.0.0.1',
       analyzerPort: 3333,
       openAnalyzer: false
-    }),
-    ...require('./webpack.base').plugins
+    })
   ]
 }

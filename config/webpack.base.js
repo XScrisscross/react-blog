@@ -14,7 +14,7 @@ const entry = path.resolve(__dirname, '../app/index')
 // output
 const output = {
   path: path.resolve(__dirname, '../webapp'), //打包文件的输出路径
-  publicPath: '/',
+  publicPath: '',
   filename: 'js/[name].[hash:8].bundle.js',
   chunkFilename: 'js/[name].[hash:8].bundle.js',
 }
