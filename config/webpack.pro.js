@@ -7,12 +7,12 @@ const webpack = require('webpack')
 // third
 const TerserPlugin = require('terser-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   mode: 'production',
   stats: 'errors-only',
   optimization: {
-    minimize: true,
     minimizer: [
       new TerserPlugin({
         terserOptions: {
@@ -37,14 +37,22 @@ module.exports = {
     ],
     splitChunks: {
       cacheGroups: {
-        commons: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "chunk",
+          priority: -10,
+          enforce: true
+        },
+        common: {
           name: "vendor",
+          priority: -20,
           filename: 'vendor/[name].[hash:8].vendor.min.js',
           chunks: "all",
-          minChunks: 2,
-          priority: 10,
+          minChunks: 2
         }
-      }
+      },
+      chunks: "all",
+      minSize: 40000
     }
   },
   entry: require('./webpack.base').entry,
@@ -52,7 +60,15 @@ module.exports = {
   resolve: require('./webpack.base').resolve,
   module: require('./webpack.base').rules,
   plugins: [
-    ...require('./webpack.base').plugins,
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../webapp')]
+    }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new BundleAnalyzerPlugin({
+      analyzerHost: '127.0.0.1',
+      analyzerPort: 3333,
+      openAnalyzer: false
+    }),
+    ...require('./webpack.base').plugins
   ]
 }

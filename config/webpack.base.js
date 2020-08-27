@@ -1,10 +1,12 @@
 // nodejs
 const path = require('path')
 
+// webpack
+const webpack = require('webpack')
+
 // third
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 // entry
 const entry = path.resolve(__dirname, '../app/index')
@@ -95,7 +97,6 @@ const rules = {
 
 // plugins
 const plugins = [
-  new CleanWebpackPlugin(),
   new HtmlWebpackPlugin({
     filename: 'index.html',
     path: path.resolve(__dirname, '../webapp/index.html'),
