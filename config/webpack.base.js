@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // entry
-const entry = path.resolve(__dirname, '../app/index')
+const entry = path.resolve(__dirname, '../app/main')
 
 // output
 const output = {
@@ -22,9 +22,15 @@ const output = {
 // resolve
 const resolve = {
   alias: {
-    // '~app': path.resolve(__dirname, '../app/api'),
-    // '~assets': path.resolve(__dirname, '../app/assets'),
-    // '~utils': path.resolve(__dirname, '../app/utils'),
+    '~actions': path.resolve(__dirname, '../app/actions'),
+    '~assets': path.resolve(__dirname, '../app/assets'),
+    '~components': path.resolve(__dirname, '../app/components'),
+    '~envs': path.resolve(__dirname, '../app/envs'),
+    '~reducers': path.resolve(__dirname, '../app/reducers'),
+    '~router': path.resolve(__dirname, '../app/router'),
+    '~tests': path.resolve(__dirname, '../app/tests'),
+    '~utils': path.resolve(__dirname, '../app/utils'),
+    '~views': path.resolve(__dirname, '../app/views')
   },
   extensions: ['.js', '.json', '.jsx', 'css', 'less', 'scss'],
   modules: [path.resolve(__dirname, '../app/components'), 'node_modules']  // 优先导入模块
