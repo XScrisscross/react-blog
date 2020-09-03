@@ -26,11 +26,8 @@ export default class Toggle extends React.Component {
 
   changeHandle(e) {
     e.preventDefault()
-    const name = e.target.name
-    console.log(e.target.name);
-    console.log(e.target.value);
     this.setState({
-      [name]: e.target.value,
+      [e.target.name]: e.target.value,
     })
   }
 
@@ -47,8 +44,8 @@ export default class Toggle extends React.Component {
     return (
       <div>
         <button onClick={this.clickHandle}>{this.state.flag ? 'A' : 'B'}</button>
-        <input name="test1" type="text" value={this.state.value} onChange={this.changeHandle} />
-        <input name="test2" type="text" value={this.state.value1} onChange={this.changeHandle} />
+        <input name="value" type="text" value={this.state.value} onChange={this.changeHandle} />
+        <input name="value1" type="text" value={this.state.value1} onChange={this.changeHandle} />
         <div>当前值{this.state.value}</div>
         <select value={this.state.current} onChange={this.selectChange}>{eles}</select>
         <div>当前select值{this.state.current}</div>
