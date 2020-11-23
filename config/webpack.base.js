@@ -25,10 +25,10 @@ const resolve = {
     '~actions': path.resolve(__dirname, '../app/actions'),
     '~assets': path.resolve(__dirname, '../app/assets'),
     '~components': path.resolve(__dirname, '../app/components'),
-    '~envs': path.resolve(__dirname, '../app/envs'),
+    '~env': path.resolve(__dirname, '../app/env'),
     '~reducers': path.resolve(__dirname, '../app/reducers'),
     '~router': path.resolve(__dirname, '../app/router'),
-    '~tests': path.resolve(__dirname, '../app/tests'),
+    '~test': path.resolve(__dirname, '../app/test'),
     '~utils': path.resolve(__dirname, '../app/utils'),
     '~views': path.resolve(__dirname, '../app/views')
   },

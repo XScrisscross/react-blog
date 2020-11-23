@@ -8,12 +8,12 @@ import Slot from './Slot'
 const SectionOne = () => {
   return (
     <div>
-      <Clock name="clock-time-1" />
-      <Clock name="clock-time-2" />
-      <Toggle />
+      {/* <Clock name="clock-time-1" /> */}
+      {/* <Clock name="clock-time-2" /> */}
+      {/* <Toggle /> */}
       {/* 状态不共享 - 状态提升 - 传值*/}
-      <Father />
-      <Slot />
+      {/* <Father /> */}
+      {/* <Slot /> */}
     </div>
   )
 }
