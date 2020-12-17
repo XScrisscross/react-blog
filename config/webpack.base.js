@@ -22,7 +22,7 @@ const output = {
 // resolve
 const resolve = {
   alias: {
-    '~actions': path.resolve(__dirname, '../app/actions'),
+    '~apis': path.resolve(__dirname, '../app/apis'),
     '~assets': path.resolve(__dirname, '../app/assets'),
     '~components': path.resolve(__dirname, '../app/components'),
     '~env': path.resolve(__dirname, '../app/env'),
