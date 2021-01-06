@@ -13,8 +13,8 @@ const Test = () => {
     <div id="index">
       {/* <SectionOne /> */}
       {/* <SectionTwo /> */}
-      <SectionThree />
-      {/* <TodoReact /> */}
+      {/* <SectionThree /> */}
+      <TodoReact />
       {/* <ReacrRouter /> */}
     </div>
   )

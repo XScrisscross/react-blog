@@ -10,11 +10,14 @@ import Reducers from '~reducers'
 import Router from '~router'
 import Utils from '~utils'
 
+import 'antd/dist/antd.css'
+import './assets/css/app.scss'
+
 ReactDOM.render(
   // element,
-  // <App />,
-  <Provider store={store}>
-    <Test />
-  </Provider>,
+  <App />,
+  // <Provider store={store}>
+  //   <Test />
+  // </Provider>,
   document.getElementById('root')
 )
