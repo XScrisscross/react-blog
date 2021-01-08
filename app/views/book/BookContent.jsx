@@ -5,7 +5,8 @@ import './BookContent.scss'
 
 import PageHeader from './PageHeader'
 
-import demo from './demo.md'
+// import demo from './demo.md'
+import demo from '../../books/index-demo/demo1.MD'
 
 export default class BookContent extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ export default class BookContent extends React.Component {
   }
 
   render() {
+    console.log(demo);
     return (
       <div className="book-content-wraper">
         <div>

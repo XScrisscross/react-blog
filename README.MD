@@ -1,11 +1,10 @@
-## description
+#### 1. 描述
 
-- ~~从零搭建 react 项目~~
-- blog日志搭建
-  blog-source: https://github.com/XScrisscross/react-app-demo, 
-  blog-path: https://xscrisscross.vercel.app, 
-  publish-path: https://github.com/XScrisscross/xscrisscross.vercel
-## index
+- blog-path: https://xscrisscross.vercel.app
+- blog-source: https://github.com/XScrisscross/react-app-blog
+- publish-path: https://github.com/XScrisscross/xscrisscross.vercel
+
+#### 2. 模块
 
 - `config`, 打包的配置
 - `webapp`, 打包过后的目录
@@ -24,7 +23,9 @@
   - `views`, 视图
 - `main.js`, 入口
 
-## version
+#### 3. 日志
+
+#### 4. 维护
 
 - v1.0
 
@@ -32,6 +33,5 @@
 
 - v1.22
 
-1. 引入markdown,redux,router,搭建blog雏形,测试blog部署vercel
-
+1. 引入 markdown,redux,router,搭建 blog 雏形,测试 blog 部署 vercel
 

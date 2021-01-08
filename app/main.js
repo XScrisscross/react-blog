@@ -13,6 +13,8 @@ import Utils from '~utils'
 import 'antd/dist/antd.css'
 import './assets/css/app.scss'
 
+import './books'
+
 ReactDOM.render(
   // element,
   <App />,

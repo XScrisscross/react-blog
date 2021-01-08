@@ -89,16 +89,8 @@ const rules = {
         },
       ],
     },
-    // {
-    //   test: /\.(md|MD)$/,
-    //   loader: 'markdown-loader',
-    //   options: {
-    //     pedantic: true,
-    //     renderer,
-    //   },
-    // },
     {
-      test: /\.md$/,
+      test: /\.(md|MD)$/,
       use: [
         {
           loader: 'html-loader',
