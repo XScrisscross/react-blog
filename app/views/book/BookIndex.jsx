@@ -1,6 +1,8 @@
 import Item from 'antd/lib/list/Item'
 import React from 'react'
 
+
+
 export default class BookIndex extends React.Component {
   constructor(props) {
     super(props)
@@ -18,12 +20,14 @@ export default class BookIndex extends React.Component {
           chapterName: 'xxxxxxxxxx',
         },
       ],
+      // demo: demo,
     }
   }
 
   componentDidMount() {}
 
   render() {
+    // console.log(demo);
     return (
       <div className="book-index-wraper">
         {this.state.bookIndex.map((item) => {
