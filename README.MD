@@ -35,3 +35,9 @@
 
 1. 引入 markdown,redux,router,搭建 blog 雏形,测试 blog 部署 vercel
 
+next 
+  react 结构封装
+  test app 分离
+  book module 完成
+  现存 blog 发布
+
