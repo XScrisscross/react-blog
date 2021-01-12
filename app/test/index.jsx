@@ -11,10 +11,11 @@ import './redux/store.js'
 const Test = () => {
   return (
     <div id="index">
+      <div>test</div>
       {/* <SectionOne /> */}
       {/* <SectionTwo /> */}
       {/* <SectionThree /> */}
-      <TodoReact />
+      {/* <TodoReact /> */}
       {/* <ReacrRouter /> */}
     </div>
   )

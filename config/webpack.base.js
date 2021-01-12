@@ -24,17 +24,21 @@ const output = {
 // resolve
 const resolve = {
   alias: {
+    '~actions': path.resolve(__dirname, '../app/actions'),
     '~apis': path.resolve(__dirname, '../app/apis'),
     '~assets': path.resolve(__dirname, '../app/assets'),
-    '~components': path.resolve(__dirname, '../app/components'),
+    '~books': path.resolve(__dirname, '../app/books'),
+    '~contain': path.resolve(__dirname, '../app/cpts/contain'),
+    '~uiview': path.resolve(__dirname, '../app/cpts/uiview'),
     '~env': path.resolve(__dirname, '../app/env'),
     '~reducers': path.resolve(__dirname, '../app/reducers'),
+    '~redux': path.resolve(__dirname, '../app/redux'),
     '~router': path.resolve(__dirname, '../app/router'),
     '~test': path.resolve(__dirname, '../app/test'),
     '~utils': path.resolve(__dirname, '../app/utils'),
     '~views': path.resolve(__dirname, '../app/views'),
   },
-  extensions: ['.js', '.json', '.jsx', 'css', 'less', 'scss'],
+  extensions: ['.js', '.json', '.jsx', 'css', 'less', 'scss', 'md', 'MD'],
   modules: [path.resolve(__dirname, '../app/components'), 'node_modules'], // 优先导入模块
 }
 

@@ -1,11 +1,11 @@
 import React from 'react'
-import Book from './book/Book'
+
+import Router from '~router'
 
 function App() {
   return (
     <div id="app">
-      {/* <Home /> */}
-      <Book />
+      app
     </div>
   )
 }

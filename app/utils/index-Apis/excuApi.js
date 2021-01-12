@@ -1,0 +1,1 @@
+export const excuApi = (data) => data.data
