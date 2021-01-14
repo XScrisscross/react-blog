@@ -31,7 +31,7 @@ const resolve = {
     '~contain': path.resolve(__dirname, '../app/cpts/contain'),
     '~uiview': path.resolve(__dirname, '../app/cpts/uiview'),
     '~env': path.resolve(__dirname, '../app/env'),
-    '~reducers': path.resolve(__dirname, '../app/reducers'),
+    '~reducer': path.resolve(__dirname, '../app/reducer'),
     '~redux': path.resolve(__dirname, '../app/redux'),
     '~router': path.resolve(__dirname, '../app/router'),
     '~test': path.resolve(__dirname, '../app/test'),

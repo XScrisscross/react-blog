@@ -9,17 +9,11 @@ import PageHeader from './PageHeader'
 import demo from '../../books/index-demo/demo1.MD'
 
 export default class BookContent extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      value: '### 1 md ```function ``` <br>  123',
-      bookName: 'react',
-      bookAuthor: 'xs',
-      demo: demo,
-    }
-
-    this.setValue = this.setValue.bind(this)
+  state = {
+    value: '### 1 md ```function ``` <br>  123',
+    bookName: 'react',
+    bookAuthor: 'xs',
+    demo: demo,
   }
 
   componentDidMount() {
@@ -32,11 +26,15 @@ export default class BookContent extends React.Component {
     this.setState({ value: this.state.value })
   }
 
+  clickHnadle() {
+    console.log(1)
+  }
+
   render() {
-    console.log(demo);
+    console.log(demo)
     return (
       <div className="book-content-wraper">
-        <div>
+        <div onClick={this.clickHnadle}>
           <PageHeader {...this.state} />
         </div>
         <div className="content-main">

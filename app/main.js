@@ -19,6 +19,8 @@ import 'normalize.css/normalize.css'
 import 'antd/dist/antd.css'
 import '~assets/css/app.scss'
 
+import './actions'
+
 function RootApp() {
   return (
     <Router>
@@ -26,7 +28,7 @@ function RootApp() {
         <Route path="/test" exact>
           <Test />
         </Route>
-        <Route path="/app" exact>
+        <Route path="/app">
           <App />
         </Route>
       </Switch>
