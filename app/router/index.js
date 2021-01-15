@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import loadable from '@loadable/component'
 import { Spin } from 'antd'
 import WithRouter from '~contain/WithRouter'
@@ -35,7 +35,7 @@ export default ((files) => {
 
     // 懒加载
     loadWraper(component) {
-      return Utils_Array.compose(AsyncComponent, RoutingGuard, WithRouter)(component)
+      return Utils_Array.compose(AsyncComponent, WithRouter, RoutingGuard)(component)
       // return loadable(comp, {
       //   fallback: <Spin tip="Loading..."> </Spin>,
       // })

@@ -19,7 +19,7 @@ import 'normalize.css/normalize.css'
 import 'antd/dist/antd.css'
 import '~assets/css/app.scss'
 
-import './actions'
+import './reducer/index'
 
 function RootApp() {
   return (

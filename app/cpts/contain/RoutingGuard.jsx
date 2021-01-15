@@ -5,6 +5,12 @@ export default (Comp) =>
   class extends React.Component {
     render() {
       console.log(this.props, 'RoutingGuard')
-      return <Comp {...this.props} />
+      const { history, location } = this.props
+      if (location.pathname === '/app/book') {
+        return <Comp {...this.props} />
+      } else {
+        return <Redirect to="/app/book" />
+      }
+      // return <Comp {...this.props} />
     }
   }
