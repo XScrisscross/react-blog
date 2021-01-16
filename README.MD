@@ -43,6 +43,7 @@
 3. apis 封装不同请求及链接,分模块自动引入命名 apis(按规则命名文件/文件夹即可),挂载到 window
 4. utils 封装不同类型工具函数,分模块自动引入命名 utils(按规则命名文件/文件夹即可),挂载到 window
 5. router 分模块自动引入整合,动态渲染路由(按规则命名文件/文件夹即可),loadable 懒加载,路由 loading,添加路由嵌套
+6. 根据types自动创建actionCreater,生成actions列表
 
 route 
 组件异步加载
