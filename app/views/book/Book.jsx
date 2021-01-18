@@ -12,9 +12,6 @@ export default class Book extends React.Component {
   componentDidMount() {}
 
   render() {
-    console.log('book');
-    console.log(this.props);
-    console.log('book');
     return (
       <div className="book-wraper">
         <Row className="book-wraper-row">

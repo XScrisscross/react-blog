@@ -9,7 +9,7 @@ const files = require.context('./', true, /(^\.\/middlewares)([a-zA-Z\/\_]+)\.js
 
 const initmMiddlewares = (files, middlewares = []) => {
   files.keys().forEach((item) => {
-    middlewares = [...middlewares, ...files(item)]
+    middlewares = [...middlewares, files(item).default]
   })
   return middlewares
 }

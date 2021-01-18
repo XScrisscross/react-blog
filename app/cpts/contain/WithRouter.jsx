@@ -5,7 +5,7 @@ export default (Comp) =>
   withRouter(
     class extends React.Component {
       render() {
-        console.log(this.props, 'WithRouter')
+        // console.log(this.props, 'WithRouter')
         return <Comp {...this.props} />
       }
     }

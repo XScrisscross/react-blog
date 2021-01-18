@@ -1,5 +1,7 @@
 import React from 'react'
 import MDEditor from '@uiw/react-md-editor'
+import { connect } from 'react-redux'
+import actions from '~actions'
 
 import './BookContent.scss'
 
@@ -8,7 +10,7 @@ import PageHeader from './PageHeader'
 // import demo from './demo.md'
 import demo from '../../books/index-demo/demo1.MD'
 
-export default class BookContent extends React.Component {
+class BookContent extends React.Component {
   state = {
     value: '### 1 md ```function ``` <br>  123',
     bookName: 'react',
@@ -26,12 +28,12 @@ export default class BookContent extends React.Component {
     this.setState({ value: this.state.value })
   }
 
-  clickHnadle() {
-    console.log(1)
-  }
+  clickHnadle() {}
 
   render() {
-    console.log(demo)
+    console.log(this.props)
+    this.props.addItem({ data: [1, 23] })
+    console.log(this.props)
     return (
       <div className="book-content-wraper">
         <div onClick={this.clickHnadle}>
@@ -45,3 +47,25 @@ export default class BookContent extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    todoList: state,
+  }
+}
+
+const { actionsMap, actionsCreater } = actions
+const { getListDemoAAction } = actionsCreater
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    addItem: (data) => {
+      dispatch(getListDemoAAction(data))
+    },
+    delItem: (data) => {
+      dispatch(delItem(data))
+    },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookContent)

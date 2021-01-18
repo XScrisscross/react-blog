@@ -5,7 +5,7 @@ export default (importFunc) => {
   const Component = lazy(importFunc)
 
   return (props) => {
-    console.log(props,'AsyncComponent');
+    // console.log(props,'AsyncComponent');
     return (
       <Suspense fallback={<Spin tip="Loading..."> </Spin>}>
         <Component {...props} />
