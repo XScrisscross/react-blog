@@ -4,13 +4,13 @@ const files = require.context('./', true, /(^\.\/reducers)([a-zA-Z\/\_]+)\.js$/)
 
 const initReducersMap = (files, reducers = []) => {
   return files.keys().reduce((res, k) => {
-    return [...res, files(k).default]
+    return files(k).default ? [...res, files(k).default] : res
   }, reducers)
 }
 
 const createReducer = (initReducersMap = [], reducers = {}) => {
-  for (const [type, reducer] of initReducersMap) {
-    reducers[type.reducer] = reducer
+  for (const [key, reducer] of initReducersMap) {
+    reducers[key] = reducer
   }
   return reducers
 }

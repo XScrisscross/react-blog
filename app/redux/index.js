@@ -8,10 +8,9 @@ const loggerMiddleware = createLogger()
 const files = require.context('./', true, /(^\.\/middlewares)([a-zA-Z\/\_]+)\.js$/)
 
 const initmMiddlewares = (files, middlewares = []) => {
-  files.keys().forEach((item) => {
-    middlewares = [...middlewares, files(item).default]
-  })
-  return middlewares
+  return  files.keys().reduce((res, k) => {
+    return files(k).default ? res.concat(files(k).default) : res
+  }, middlewares)
 }
 
 export default ((rootReducer, preloadedState, middlewares) => {

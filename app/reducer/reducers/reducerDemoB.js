@@ -8,17 +8,13 @@ const {
 const initState = {}
 
 export default [
-  getListDemoB,
-  (
-    state = initState,
-    payload = {
-      data: null,
-      promise: null,
-      success: null,
-      error: null,
+  getListDemoB.reducer,
+  (state = initState, action) => {
+    const { type, payload } = action
+    if (type === 'getListDemoB') {
+      const { data } = payload
+      return { ...state, data }
     }
-  ) => {
-    const { data } = payload
-    return { ...state, data }
-  },
+    return state
+  }
 ]

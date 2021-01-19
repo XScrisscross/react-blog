@@ -21,7 +21,7 @@ import '~assets/css/app.scss'
 
 import './reducer/index'
 
-function RootApp() {
+function RootApp () {
   return (
     <Provider store={store}>
       <Router>

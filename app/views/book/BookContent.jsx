@@ -31,9 +31,9 @@ class BookContent extends React.Component {
   clickHnadle() {}
 
   render() {
-    console.log(this.props)
-    this.props.addItem({ data: [1, 23] })
-    console.log(this.props)
+    // console.log(this.props)
+    // this.props.addItem({ data: [1, 23] })
+    // console.log(this.props)
     return (
       <div className="book-content-wraper">
         <div onClick={this.clickHnadle}>

@@ -15,15 +15,15 @@ export default ((files) => {
     }
 
     // 合并 route
-    mergeRoute(files, routes = []) {
+    mergeRoute (files, routes = []) {
       routes = files.keys().reduce((res, k) => {
-        return res.concat(files(k).default)
+        return files(k).default ? res.concat(files(k).default) : res
       }, [])
       return this.valiRoutesParams(routes)
     }
 
     // 校验 route 参数
-    valiRoutesParams(routes) {
+    valiRoutesParams (routes) {
       let valires = routes.every((route) => {
         return Object.prototype.toString.call(route) === '[object Object]' && route.name && route.component
       })
@@ -34,14 +34,14 @@ export default ((files) => {
     }
 
     // 懒加载
-    loadWraper(component) {
+    loadWraper (component) {
       return Utils_Array.compose(AsyncComponent, WithRouter, RoutingGuard)(component)
       // return loadable(comp, {
       //   fallback: <Spin tip="Loading..."> </Spin>,
       // })
     }
 
-    render() {
+    render () {
       return (
         <Switch>
           {this.state.routes.map((item, index) => {

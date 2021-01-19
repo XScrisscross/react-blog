@@ -1,25 +1,24 @@
 import actions from '~actions'
 
+console.log(actions);
+
 const {
-  actionsMap: { getListDemoA },
+  actionsMap: { getListDemoB },
+  actionsCreater,
 } = actions
 
 const initState = {
-  todoList: [1, 23],
+  todoList: [1, 2],
 }
 
 export default [
-  getListDemoA,
-  (
-    state = initState,
-    payload = {
-      data: null,
-      promise: null,
-      success: null,
-      error: null,
+  getListDemoA.reducer,
+  (state = initState, action) => {
+    const { type, payload } = action
+    if (type === 'getListDemoA') {
+      const { data } = payload
+      return { ...state, data }
     }
-  ) => {
-    const { data } = payload
-    return { ...state, data }
-  },
+    return state
+  }
 ]

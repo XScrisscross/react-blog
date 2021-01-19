@@ -12,17 +12,10 @@ const initActions = (files, actions = {}) => {
 const creatActionFn = (actions = {}, actionsFn = {}) => {
   for (const actionInfo in actions) {
     const { key, action, reducer } = actions[actionInfo]
-    actionsFn[action] = (
-      payload = {
-        data: null,
-        promise: null,
-        success: null,
-        error: null,
-      }
-    ) => {
+    actionsFn[action] = (payload) => {
       const { data, promise, success, error } = payload
       return {
-        key,
+        type: key,
         payload: {
           data,
           promise,
