@@ -17,6 +17,8 @@ import App from '~views'
 import Test from '~test'
 // import store from '~redux'
 
+// console.log(haha);
+
 // gloable-css
 import 'normalize.css/normalize.css'
 import 'antd/dist/antd.css'

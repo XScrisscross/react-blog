@@ -3,13 +3,15 @@ const path = require('path')
 
 const fs = require('fs')
 
-console.log(1)
-fs.readFile(path.resolve(__dirname, '../app/source/books/sectionD/1-搭建自己的(一).MD'), 'utf-8', function (error, data) {
-  // return console.log('读取文件失败,内容是' + error)
-  console.log('读取文件成功,内容是' + data)
-  console.log(1)
-})
-console.log(1)
+let books = ''
+
+// fs.readFile(path.resolve(__dirname, '../app/source/books/sectionD/1-搭建自己的(一).MD'), 'utf-8', function(error, data) {
+//   // return console.log('读取文件失败,内容是' + error)
+//   // console.log('读取文件成功,内容是' + data)
+//   books = data
+// })
+
+// console.log(books)
 
 // webpack
 const webpack = require('webpack')
@@ -145,6 +147,10 @@ const plugins = [
     filename: 'css/[name].[hash:8].bundle.css',
     chunkFilename: 'css/[name].[hash:8].bundle.css',
   }),
+  new webpack.DefinePlugin({
+    "haha": '#1 123'  
+  })
+
 ]
 
 module.exports = {

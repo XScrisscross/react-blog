@@ -11,6 +11,7 @@ import ReactMarkdown from 'react-markdown'
 import arr from '../../source/books'
 
 console.log(1)
+const marked = require('marked')
 
 export default class BookContent extends React.Component {
   state = {
@@ -35,7 +36,8 @@ export default class BookContent extends React.Component {
   }
 
   render() {
-    let html_string =  arr[2].chapterContent
+    // console.log(haha);
+    let html_string = marked(arr[2].chapterContent)
     return (
       <div className="book-content-wraper">
         <div
@@ -49,7 +51,8 @@ export default class BookContent extends React.Component {
 
         {/* {this.state.demo} */}
         {/* <MDEditor value={this.state.value} onChange={this.setValue} /> */}
-        <MDEditor.Markdown source={this.state.demo} />
+        {/* <MDEditor.Markdown source={this.state.demo} /> */}
+        {/* <MDEditor.Markdown source={haha} /> */}
         {/* <ReactMarkdown>{this.state.demo}</ReactMarkdown> */}
       </div>
     )
