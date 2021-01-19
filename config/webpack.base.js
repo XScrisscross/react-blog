@@ -3,15 +3,17 @@ const path = require('path')
 
 const fs = require('fs')
 
-let books = ''
+// let books = ''
 
-// fs.readFile(path.resolve(__dirname, '../app/source/books/sectionD/1-搭建自己的(一).MD'), 'utf-8', function(error, data) {
-//   // return console.log('读取文件失败,内容是' + error)
-//   // console.log('读取文件成功,内容是' + data)
-//   books = data
-// })
+// // book = fs.readFile(path.resolve(__dirname, '../app/source/books/sectionD/1-搭建自己的(一).MD'), 'utf-8', function(error, data) {
+// //   // return console.log('读取文件失败,内容是' + error)
+// //   console.log('读取文件成功,内容是' + data)
+// //   books = data
+// // })
+// book = fs.readFileSync(path.resolve(__dirname, '../app/source/books/sectionD/1-搭建自己的(一).MD'))
 
-// console.log(books)
+// let b = JSON.parse(book);
+// console.log(b) 
 
 // webpack
 const webpack = require('webpack')
@@ -112,11 +114,9 @@ const rules = {
           loader: 'html-loader',
         },
         {
-          loader: 'markdown-loader',
-          options: {
-            pedantic: true,
-            renderer,
-          },
+          // loader: 'markdown-loader',
+          loader: require.resolve('./loader.js'),
+          options: {},
         },
       ],
     },

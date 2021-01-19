@@ -1,5 +1,5 @@
 const files = require.context('./', true, /\.(MD|md)$/)
-console.log(files)
+// console.log(files)
 
 // const analyzeMDS = (files,bookInfo) => {
 //   files.keys().forEach((k) => {
@@ -34,7 +34,7 @@ files.keys().forEach((item) => {
     chapterContent
   }
   arr.push(obj)
-  console.log(arr)
+  // console.log(arr)
   // console.log(indexFn);
   // console.log(indexName);
 

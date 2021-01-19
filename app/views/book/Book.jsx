@@ -6,7 +6,7 @@ import BookIndex from './BookIndex'
 import BookContent from './BookContent'
 import BookPendant from './BookPendant'
 
-import './Book.scss'
+// import './Book.scss'
 
 export default class Book extends React.Component {
   componentDidMount() {}
