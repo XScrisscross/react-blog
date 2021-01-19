@@ -1,6 +1,16 @@
 // nodejs
 const path = require('path')
 
+const fs = require('fs')
+
+console.log(1)
+fs.readFile(path.resolve(__dirname, '../app/source/books/sectionD/1-搭建自己的(一).MD'), 'utf-8', function (error, data) {
+  // return console.log('读取文件失败,内容是' + error)
+  console.log('读取文件成功,内容是' + data)
+  console.log(1)
+})
+console.log(1)
+
 // webpack
 const webpack = require('webpack')
 
@@ -27,7 +37,7 @@ const resolve = {
     '~actions': path.resolve(__dirname, '../app/actions'),
     '~apis': path.resolve(__dirname, '../app/apis'),
     '~assets': path.resolve(__dirname, '../app/assets'),
-    '~books': path.resolve(__dirname, '../app/books'),
+    '~books': path.resolve(__dirname, '../app/source/books'),
     '~contain': path.resolve(__dirname, '../app/cpts/contain'),
     '~uiview': path.resolve(__dirname, '../app/cpts/uiview'),
     '~env': path.resolve(__dirname, '../app/env'),
