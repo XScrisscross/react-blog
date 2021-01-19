@@ -1,71 +1,57 @@
 import React from 'react'
 import MDEditor from '@uiw/react-md-editor'
-import { connect } from 'react-redux'
-import actions from '~actions'
+import PageHeader from './PageHeader'
+
+var FileSaver = require('file-saver')
 
 import './BookContent.scss'
 
-import PageHeader from './PageHeader'
+import ReactMarkdown from 'react-markdown'
 
-// import demo from './demo.md'
-import demo from '../../books/index-demo/demo1.MD'
+import arr from '../../source/books'
 
-class BookContent extends React.Component {
+console.log(1)
+
+export default class BookContent extends React.Component {
   state = {
     value: '### 1 md ```function ``` <br>  123',
     bookName: 'react',
     bookAuthor: 'xs',
-    demo: demo,
+    demo: '',
   }
 
-  componentDidMount() {
-    // var FileSaver = require('file-saver')
-    // var blob = new Blob(['Hello, world!'], { type: 'text/plain;charset=utf-8' })
-    // FileSaver.saveAs(blob, '~views/hello world.txt')
-  }
+  componentDidMount() {}
 
   setValue() {
     this.setState({ value: this.state.value })
   }
 
-  clickHnadle() {}
+  clickHnadle() {
+    console.log('---')
+    console.log(this.state.value)
+    console.log('---')
+    var blob = new Blob([this.state.demo], { type: 'text/plain;charset=utf-8' })
+    FileSaver.saveAs(blob, 'hello world.txt')
+  }
 
   render() {
-    console.log(this.props)
-    this.props.addItem({ data: [1, 23] })
-    console.log(this.props)
+    let html_string =  arr[2].chapterContent
     return (
       <div className="book-content-wraper">
+        <div
+          style={{ display: 'inline-block' }}
+          dangerouslySetInnerHTML={{ __html: html_string }} >
+        </div>
+
         <div onClick={this.clickHnadle}>
           <PageHeader {...this.state} />
         </div>
-        <div className="content-main">
-          {/* <MDEditor value={this.state.value} onChange={this.setValue} /> */}
-          <MDEditor.Markdown source={this.state.demo} />
-        </div>
+
+        {/* {this.state.demo} */}
+        {/* <MDEditor value={this.state.value} onChange={this.setValue} /> */}
+        <MDEditor.Markdown source={this.state.demo} />
+        {/* <ReactMarkdown>{this.state.demo}</ReactMarkdown> */}
       </div>
     )
   }
 }
-
-const mapStateToProps = (state, ownProps) => {
-  return {
-    todoList: state,
-  }
-}
-
-const { actionsMap, actionsCreater } = actions
-const { getListDemoAAction } = actionsCreater
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    addItem: (data) => {
-      dispatch(getListDemoAAction(data))
-    },
-    delItem: (data) => {
-      dispatch(delItem(data))
-    },
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BookContent)

@@ -14,17 +14,8 @@ export default class Book extends React.Component {
   render() {
     return (
       <div className="book-wraper">
-        <Row className="book-wraper-row">
-          <Col span={5}>
-            <BookIndex /> 
-          </Col>
-          <Col span={14}>
-            <BookContent />
-          </Col>
-          <Col span={5}>
-            <BookPendant />
-          </Col>
-        </Row>
+        <BookContent />
+        <BookIndex />
       </div>
     )
   }
