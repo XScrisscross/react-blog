@@ -4,14 +4,29 @@ import PageHeader from './PageHeader'
 
 var FileSaver = require('file-saver')
 
-import './BookContent.scss'
+import ReactMarkdown from 'react-markdown/with-html';
+import md from '../../source/books/sectionD/1-搭建自己的(一).MD'
 
-import ReactMarkdown from 'react-markdown'
+// import './BookContent.scss'
+
 
 import arr from '../../source/books'
 
-console.log(1)
+// console.log(1)
 const marked = require('marked')
+
+const articles = {
+  '1': '/developer_guide.md',
+  '2': '/user_manual.md'
+}
+
+const changeCurrentArticle = async (url) => {
+  const res = await fetch('../../source/books/sectionD/1-搭建自己的(一).MD');
+  console.log(1);
+  console.log(res.text());
+  console.log(1);
+}
+changeCurrentArticle()
 
 export default class BookContent extends React.Component {
   state = {
@@ -37,14 +52,16 @@ export default class BookContent extends React.Component {
 
   render() {
     // console.log(haha);
-    let html_string = marked(arr[2].chapterContent)
-    console.log(html_string);
+    let html_string = marked(md)
+    // html_string = html_string.replace('<p>','')
+    console.log();
+    // marked
+    // console.log(html_string);
     return (
       <div className="book-content-wraper">
-        <div
-          style={{ display: 'inline-block' }}
+        {/* <div
           dangerouslySetInnerHTML={{ __html: html_string }} >
-        </div>
+        </div> */}
 
         <div onClick={this.clickHnadle}>
           <PageHeader {...this.state} />
@@ -52,9 +69,9 @@ export default class BookContent extends React.Component {
 
         {/* {this.state.demo} */}
         {/* <MDEditor value={this.state.value} onChange={this.setValue} /> */}
-        {/* <MDEditor.Markdown source={this.state.demo} /> */}
-        {/* <MDEditor.Markdown source={haha} /> */}
-        {/* <ReactMarkdown>{this.state.demo}</ReactMarkdown> */}
+        {/* <MDEditor.Markdown source={} /> */}
+        <MDEditor.Markdown source={html_string} />
+        {/* <ReactMarkdown>{html_string}</ReactMarkdown> */}
       </div>
     )
   }

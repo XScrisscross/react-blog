@@ -3,9 +3,9 @@ import React from 'react'
 import { FileMarkdownTwoTone, FileExclamationTwoTone } from '@ant-design/icons'
 import arr from '~books'
 
-import './BookIndex.scss'
+// import './BookIndex.scss'
 
-console.log('---')
+// console.log('---')
 // console.log(arr)
 // var resolve = require('resolve');
 // resolve('tap', { basedir: '../../source/books/sectionD/1-搭建自己的(一).MD' }, function (err, res) {
