@@ -14,24 +14,22 @@ import '~books'
 
 // main
 import App from '~views'
-// import Test from '~test'
+import Test from '~test'
 // import store from '~redux'
-
-// console.log(haha);
 
 // gloable-css
 import 'normalize.css/normalize.css'
 import 'antd/dist/antd.css'
-// import '~assets/css/app.scss'
+import '~assets/css/app.scss'
 
 function RootApp() {
   return (
     // <Provider store={store}>
     <Router>
       <Switch>
-        {/* <Route path="/test" exact> */}
-          {/* <Test /> */}
-        {/* </Route> */}
+        <Route path="/test" exact>
+          <Test />
+        </Route>
         <Route path="/app">
           <App />
         </Route>

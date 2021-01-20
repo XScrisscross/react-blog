@@ -1,20 +1,6 @@
 // nodejs
 const path = require('path')
 
-const fs = require('fs')
-
-// let books = ''
-
-// // book = fs.readFile(path.resolve(__dirname, '../app/source/books/sectionD/1-搭建自己的(一).MD'), 'utf-8', function(error, data) {
-// //   // return console.log('读取文件失败,内容是' + error)
-// //   console.log('读取文件成功,内容是' + data)
-// //   books = data
-// // })
-// book = fs.readFileSync(path.resolve(__dirname, '../app/source/books/sectionD/1-搭建自己的(一).MD'))
-
-// let b = JSON.parse(book);
-// console.log(b) 
-
 // webpack
 const webpack = require('webpack')
 
@@ -107,17 +93,24 @@ const rules = {
         },
       ],
     },
+    // {
+    //   test: /\.(md|MD)$/,
+    //   use: [
+    //     {
+    //       loader: 'html-loader',
+    //     },
+    //     {
+    //       loader: 'markdown-loader',
+    //       // loader: require.resolve('./loader.js'),
+    //       options: {},
+    //     },
+    //   ],
+    // },
     {
-      test: /\.(md|MD)$/,
+      test: /\.mdx?$/,
       use: [
-        {
-          loader: 'html-loader',
-        },
-        {
-          // loader: 'markdown-loader',
-          loader: require.resolve('./loader.js'),
-          options: {},
-        },
+        'babel-loader',
+        '@mdx-js/loader',
       ],
     },
     {
@@ -147,10 +140,6 @@ const plugins = [
     filename: 'css/[name].[hash:8].bundle.css',
     chunkFilename: 'css/[name].[hash:8].bundle.css',
   }),
-  new webpack.DefinePlugin({
-    "haha": '#1 123'  
-  })
-
 ]
 
 module.exports = {

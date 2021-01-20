@@ -3,15 +3,7 @@ import React from 'react'
 import { FileMarkdownTwoTone, FileExclamationTwoTone } from '@ant-design/icons'
 import arr from '~books'
 
-// import './BookIndex.scss'
-
-// console.log('---')
-// console.log(arr)
-// var resolve = require('resolve');
-// resolve('tap', { basedir: '../../source/books/sectionD/1-搭建自己的(一).MD' }, function (err, res) {
-//     if (err) console.error(err);
-//     else console.log(res);
-// });
+import './BookIndex.scss'
 
 export default class BookIndex extends React.Component {
   constructor(props) {
@@ -19,14 +11,12 @@ export default class BookIndex extends React.Component {
 
     this.state = {
       bookIndex: arr,
-      // demo: demo,
     }
   }
 
   componentDidMount() {}
 
   render() {
-    // console.log(demo);
     return (
       <div className="book-sidebar">
         <div className="book-index-edit">
@@ -36,7 +26,6 @@ export default class BookIndex extends React.Component {
           {this.state.bookIndex.map((item, index) => {
             return (
               <div className={index === 0 ? 'chapter-item active' : 'chapter-item'} key={item.typeRela + item.chapterId}>
-                {/* <FileMarkdownTwoTone  className="mr10" /> */}
                 <div className="chapter-name ">
                   {index + 1} . {item.chapterName}
                 </div>
