@@ -1,9 +1,7 @@
-import actions from '~actions'
+import { actionsMap, actionsCreater } from '~actions'
 
-const {
-  actionsMap: { getListDemoB },
-  actionsCreater,
-} = actions
+// types 中有aciotn,reducer,key
+const { getListDemoB } = actionsMap
 
 const initState = {}
 

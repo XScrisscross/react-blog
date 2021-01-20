@@ -31,4 +31,6 @@ const creatActionFn = (actions = {}, actionsFn = {}) => {
   }
 }
 
-export default Utils_Array.compose(initActions, creatActionFn)(files)
+// actionsMap:key列表
+// actionsCreater:key-action列表
+export const { actionsMap, actionsCreater } = Utils_Array.compose(initActions, creatActionFn)(files)
