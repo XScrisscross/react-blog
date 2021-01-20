@@ -1,18 +1,24 @@
 import React from 'react'
 import PageHeader from './PageHeader'
+import { MDXProvider } from '@mdx-js/react'
+import Code from '../../cpts/contain/CodeBlockHighLight'
 
 import './BookContent.scss'
 
-import MD from '../../source/books/sectionD/1-搭建自己的(一).md'
+import arr from '../../source/books'
+const Hello = arr[0].chapterContent.default
 
 export default class BookContent extends React.Component {
   render() {
     return (
       <div className="book-content-wraper">
-        <div>
+        <>
           <PageHeader />
-        </div>
-        <MD />
+        </>
+
+        {/* <Hello components={components} /> */}
+
+        <Code><Hello /></ Code>
       </div>
     )
   }

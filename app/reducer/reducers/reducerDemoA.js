@@ -1,9 +1,7 @@
 import actions from '~actions'
 
-console.log(actions);
-
 const {
-  actionsMap: { getListDemoB },
+  actionsMap: { getListDemoA },
   actionsCreater,
 } = actions
 

@@ -15,7 +15,7 @@ import '~books'
 // main
 import App from '~views'
 import Test from '~test'
-// import store from '~redux'
+import store from '~redux'
 
 // gloable-css
 import 'normalize.css/normalize.css'
@@ -24,18 +24,18 @@ import '~assets/css/app.scss'
 
 function RootApp() {
   return (
-    // <Provider store={store}>
-    <Router>
-      <Switch>
-        <Route path="/test" exact>
-          <Test />
-        </Route>
-        <Route path="/app">
-          <App />
-        </Route>
-      </Switch>
-    </Router>
-    // </Provider>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route path="/test" exact>
+            <Test />
+          </Route>
+          <Route path="/app">
+            <App />
+          </Route>
+        </Switch>
+      </Router>
+    </Provider>
   )
 }
 

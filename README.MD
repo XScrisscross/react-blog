@@ -45,11 +45,5 @@
 5. router 分模块自动引入整合,动态渲染路由(按规则命名文件/文件夹即可),loadable 懒加载,路由 loading,添加路由嵌套
 6. 根据types自动创建actionCreater,生成actions列表
 
-route 
-组件异步加载
-
-
-
-react 结构封装
 book module 完成
 现存 blog 发布
