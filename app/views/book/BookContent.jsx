@@ -38,6 +38,7 @@ export default class BookContent extends React.Component {
   render() {
     // console.log(haha);
     let html_string = marked(arr[2].chapterContent)
+    console.log(html_string);
     return (
       <div className="book-content-wraper">
         <div
