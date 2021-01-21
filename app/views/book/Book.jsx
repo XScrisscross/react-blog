@@ -1,4 +1,5 @@
 import React from 'react'
+import mdBooks from '~books'
 
 import BookSideBar from './BookSideBar'
 import BookContent from './BookContent'
@@ -11,7 +12,7 @@ export default class Book extends React.Component {
       <>
         <div className="book-wraper">
           <BookContent />
-          <BookSideBar />
+          <BookSideBar mdBooks={mdBooks} />
         </div>
       </>
     )

@@ -1,12 +1,11 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
-
-import Code from '../../cpts/contain/CodeBlockHighLight'
+import Code from '~contain/CodeBlockHighLight'
+import mdBooks from '~books'
 
 import './PageMain.scss'
 
-import arr from '../../../static/books'
-const Hello = arr[0].chapterContent.default
+const Hello = mdBooks[0].chapterContent
 
 export default class PageMain extends React.Component {
   render() {

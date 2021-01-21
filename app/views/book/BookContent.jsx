@@ -4,6 +4,8 @@ import PageHeader from './PageHeader'
 import PageMain from './PageMain'
 import PageFooter from './PageFooter'
 
+import mdBooks from '~books'
+
 import './BookContent.scss'
 
 export default class BookContent extends React.Component {
@@ -11,7 +13,7 @@ export default class BookContent extends React.Component {
     return (
       <div className="book-content-wraper">
         <PageHeader />
-        <PageMain />
+        <PageMain {...mdBooks} />
         <PageFooter />
       </div>
     )

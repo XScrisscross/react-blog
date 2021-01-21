@@ -6,11 +6,4 @@
   min-height: 100%;
   padding-bottom: 10px;
   background-color: $main-color;
-  
-  .icon {
-    cursor: pointer;
-    &:hover {
-      transform: scale(1.5);
-    }
-  }
 }

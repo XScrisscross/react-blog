@@ -1,42 +1,15 @@
-#### 1. 描述
+### 1. 描述
 
-- `blog-path`: [https://xscrisscross.vercel.app]
-- `blog-source`: [https://github.com/XScrisscross/react-app-blog]
-- `publish-path`: [https://github.com/XScrisscross/xscrisscross.vercel]
+- `blog-path`: < https://xscrisscross.vercel.app >
+- `blog-source`: < https://github.com/XScrisscross/react-app-blog >
+- `publish-path`: < https://github.com/XScrisscross/xscrisscross.vercel >
 
-#### 2. 模块
+### 2. 维护
 
-- `config`, 打包的配置
-- `webapp`, 打包过后的目录
-- `public`, 打包模板
-- `app`,
-  - `actions`, 指令
-  - `apis`, 请求封装
-  - `assets`, 静态资源
-  - `books`, blog 资源
-  - `cpts`, 公共的组件
-  - `env`, 环境配置
-  - `reducers`, 操作改变`store`的方法
-  - `redux`, `redux`树
-  - `router`, 路由的配置
-  - `test`, 测试
-  - `utils`, 公共方法
-  - `views`, 视图
-- `main.js`, 入口
-
-#### 3. 日志
-
-1. 基于 `react` 搭建自己的 `blog` 网站(一)
-
-#### 4. 维护
-
-- v1.0
+- v1.21
 
 1. `webpack`配置打包以及启动环境,`react`配置基本目录,引入基本依赖
-
-- v1.22
-
-1. 引入 `markdown`,`redux`,`router`,搭建 `blog` 雏形,测试 `blog` 部署 `vercel`
+2. 引入 `markdown`,`redux`,`router`,搭建 `blog` 雏形,测试 `blog` 部署 `vercel`
 
 - v1.23
 
@@ -52,7 +25,4 @@
 1. 根据 `types` 自动创建 `reducers`,生成 `reducers` 列表,对应关系 `key-action-ruducer`
 2. 添加处理异步请求的中间件,添加 `dispatch` 是 `log` 中间件等
 3. 添加`@mdx/loader`(处理 `md` 文件流解析),添加代码块高亮主题插件(默认 `github` 同款主题)
-4. `books` 动态引入,`loading` 动画,`book` 定义规则
-
-book 展示 fotter 完成
-现存 blog 发布
+4. `books` 动态引入,`loading` 动画,`book` 定义规则, 自定义部分 markdown 样式

@@ -12,7 +12,7 @@
     font-size: 14px;
     width: 290px;
     height: 70px;
-    color: #333;
+    color: $main-font;
     word-break: break-all;
     top: 30px;
     padding: 10px 20px 0;
@@ -20,9 +20,22 @@
     background-color: #fefef2;
     display: flex;
     flex-direction: row;
-    font-size: 26px;
-    color: #ae976e;
+    font-size: 30px;
+    color: $title-color;
     align-items: center;
+
+    .chapter-name {
+      margin: 4px 0;
+    }
+
+    .icon {
+      cursor: pointer;
+      transition: all ease-in-out 0.1s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
   }
 
   .book-index-list {
@@ -32,7 +45,7 @@
     min-height: 400px;
     display: flex;
     flex-direction: column;
-    color: #333;
+    color: $main-font;
     word-break: break-all;
     top: 110px;
     padding: 10px;
@@ -44,11 +57,22 @@
       padding: 0 2px;
       align-items: center;
       width: 270px;
-      color: #075db3;
+      color: $title-color;
       cursor: pointer;
+      transition: all ease-in-out 0.2s;
 
       &.active {
-        // background-color: $main-color;
+        color: #fff;
+        background-color: $title-color;
+        &:hover {
+          padding-left: 2px;
+          color: #fff;
+        }
+      }
+
+      &:hover {
+        padding-left: 10px;
+        color: $main-font;
       }
     }
   }

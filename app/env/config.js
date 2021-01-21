@@ -10,5 +10,6 @@ export default {
   },
   blogType: {
     TYPEO: '其他',
+    INFO: '小站说明',
   },
 }
