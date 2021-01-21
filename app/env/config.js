@@ -3,12 +3,12 @@ export default {
     mode: 'pro',
     baseURL: '',
   },
-  userInfo: {
-    username: '',
-    password: '',
-  },
   blogInfo: {
+    user: '',
     title: '',
     createTime: '',
+  },
+  blogType: {
+    TYPEO: '其他',
   },
 }

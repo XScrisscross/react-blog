@@ -1,13 +1,18 @@
 import React, { Suspense, lazy } from 'react'
-import { Spin } from 'antd'
+import '~assets/css/anime/loading.scss'
 
 export default (importFunc) => {
   const Component = lazy(importFunc)
 
   return (props) => {
-    // console.log(props,'AsyncComponent');
     return (
-      <Suspense fallback={<Spin tip="Loading..."> </Spin>}>
+      <Suspense
+        fallback={
+          <div className="cover-container">
+            <div className="animation-loading-target">ฅ^._.^ฅ</div>
+          </div>
+        }
+      >
         <Component {...props} />
       </Suspense>
     )

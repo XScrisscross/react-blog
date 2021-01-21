@@ -4,7 +4,7 @@
 // main-var-color
 $background: #e3d1bd;
 
-$main-color: #f8f0e7;
+$main-color: #FEFEF2;
 
 $main-font: #333;
 
@@ -13,11 +13,3 @@ $main-red: #db4e44;
 $main-gray: #9e9e9e;
 
 $light-gray: #eee;
-
-@mixin chapter-title {
-  font-weight: bold;
-  font-size: 25px;
-  font-family: 黑体;
-  text-align: left;
-  color: #aa7a53;
-}

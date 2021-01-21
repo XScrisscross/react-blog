@@ -1,8 +1,7 @@
 import React from 'react'
 
-import BookIndex from './BookIndex'
+import BookSideBar from './BookSideBar'
 import BookContent from './BookContent'
-import BookPendant from './BookPendant'
 
 import './Book.scss'
 
@@ -12,7 +11,7 @@ export default class Book extends React.Component {
       <>
         <div className="book-wraper">
           <BookContent />
-          <BookIndex />
+          <BookSideBar />
         </div>
       </>
     )

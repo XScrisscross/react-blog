@@ -38,7 +38,7 @@ module.exports = {
         default: {
           priority: -20,
           reuseExistingChunk: true,
-          filename: 'common.js'
+          filename: 'js/common.js'
         }
       }
     }

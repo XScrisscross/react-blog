@@ -2,11 +2,12 @@
 
 .page-header-wraper {
   display: flex;
-  height: 60px;
+  height: 80px;
   font-size: 16px;
-  padding-top: 30px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid $main-gray;
+  padding: 50px 20px 0;
+  background-image: url('~assets/img/bg_top.gif');
+  background-repeat: repeat-x;
+  background-size: auto;
 
   .book-name {
     color: $main-red;
