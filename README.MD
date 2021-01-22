@@ -1,4 +1,4 @@
-### 1. 描述
+### 1. 说明
 
 - `blog-path`: < https://xscrisscross.vercel.app >
 - `blog-source`: < https://github.com/XScrisscross/react-app-blog >

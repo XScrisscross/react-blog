@@ -8,8 +8,30 @@ export default {
     title: '',
     createTime: '',
   },
-  blogType: {
-    TYPEO: '其他',
-    INFO: '小站说明',
-  },
+  blogType: [
+    {
+      name: '其他',
+      type: 'TYPEO',
+    },
+    {
+      name: 'JS',
+      type: 'TYPEA',
+    },
+    {
+      name: 'CSS/HTML',
+      type: 'TYPEB',
+    },
+    {
+      name: '框架',
+      type: 'TYPEC',
+    },
+    {
+      name: 'HTTP',
+      type: 'TYPED',
+    },
+    {
+      name: '算法',
+      type: 'TYPEE',
+    },
+  ],
 }

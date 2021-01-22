@@ -19,7 +19,7 @@ import store from '~redux'
 
 // gloable-css
 import 'normalize.css/normalize.css'
-import 'antd/dist/antd.css'
+import 'antd/dist/antd.less'
 import '~assets/css/app.scss'
 
 function RootApp() {

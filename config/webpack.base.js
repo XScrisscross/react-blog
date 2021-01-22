@@ -68,7 +68,15 @@ const rules = {
           options: { publicPath: './css' },
         },
         'css-loader',
-        'less-loader',
+        {
+          loader: 'less-loader',
+          options: {
+            lessOptions: {
+              modifyVars: { '@primary-color': '#ae976e' },
+              javascriptEnabled: true,
+            },
+          },
+        },
       ],
     },
     {

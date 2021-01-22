@@ -1,18 +1,20 @@
-import config from '~env/config'
 import search from '../../README.MD'
+import config from '~env/config'
+
+const typeRelation = config.blogType.reduce((res, k) => {
+  return { ...res, [k.type]: k.name }
+}, {})
 
 const files = require.context('./', true, /\.(MD|md)$/)
-
-const typeRelation = config.blogType
 
 const fetchFilesInfo = (files, filesInfo = []) => {
   filesInfo.push({
     chapterId: '0',
-    createTime: '',
+    createTime: '9999999999999',
     RelaType: 'INFO',
-    typeName: typeRelation['INFO'],
+    typeName: '说明',
     chapterName: '维护日志',
-    chapterContent: search,
+    chapterContent: { default: search },
   })
 
   files.keys().forEach((file) => {
@@ -31,4 +33,4 @@ const fetchFilesInfo = (files, filesInfo = []) => {
   return filesInfo
 }
 
-export default fetchFilesInfo(files)
+export default Utils_Array.compose(Utils_Array.sortByFiled, Utils_Array.addActiveFirst)(fetchFilesInfo(files), 'createTime')
