@@ -9,9 +9,6 @@ import '~apis'
 import '~utils'
 import '~env'
 
-// mount-source
-import '~books'
-
 // main
 import App from '~views'
 import Test from '~test'
@@ -22,7 +19,7 @@ import 'normalize.css/normalize.css'
 import 'antd/dist/antd.less'
 import '~assets/css/app.scss'
 
-function RootApp() {
+function RootApp () {
   return (
     <Provider store={store}>
       <Router>

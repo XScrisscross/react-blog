@@ -1,11 +1,12 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import { PlusCircleOutlined, ExclamationCircleOutlined } from '@ant-design/icons'
 
 import BookEdit from './BookEdit'
 
 import './BookSideBar.scss'
 
-export default class BookSideBar extends React.Component {
+class BookSideBar extends React.Component {
   state = {
     isModalVisible: false,
   }
@@ -46,3 +47,5 @@ export default class BookSideBar extends React.Component {
     )
   }
 }
+
+export default withRouter(BookSideBar)

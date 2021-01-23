@@ -65,7 +65,7 @@ const rules = {
       use: [
         {
           loader: MiniCssExtractPlugin.loader,
-          options: { publicPath: './css' },
+          options: { publicPath: '../' },
         },
         'css-loader',
         {

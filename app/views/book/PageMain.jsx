@@ -3,7 +3,6 @@ import { MDXProvider } from '@mdx-js/react'
 import Code from '~contain/CodeBlockHighLight'
 
 import './PageMain.scss'
-
 export default class PageMain extends React.Component {
   render() {
     const Component = this.props.bookInfo.chapterContent.default

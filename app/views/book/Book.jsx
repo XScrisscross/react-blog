@@ -7,7 +7,6 @@ import PageFooter from './PageFooter'
 import BookSideBar from './BookSideBar'
 
 import './Book.scss'
-
 export default class Book extends React.Component {
   state = {
     booksInfo: booksInfo,

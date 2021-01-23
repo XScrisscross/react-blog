@@ -6,41 +6,18 @@ import config from '~env/config'
 
 import './BookEdit.scss'
 
+const bookForm = React.createRef()
 export default class BookEdit extends React.Component {
-  constructor(props) {
-    super(props)
+  state = {
+    // blog
+    blog: '',
+    blogName: '',
+    blogType: config.blogType,
 
-    const blogType = config.blogType
-    this.form = React.createRef()
-    console.log(this.form);
-
-    this.state = {
-      // blog
-      blog: '',
-      blogName: '',
-      blogType: blogType,
-
-      // form
-      form: '',
-      validateMessages: {
-        required: '${label} 不可为空!',
-      },
-    }
-  }
-
-  // state = {
-  //   blogType: config.blogType,
-  //   blog: '',
-  //   blogName: '',
-
-  //   // form: Form.useForm()[0],
-  //   validateMessages: {
-  //     required: '${label} 不可为空!',
-  //   },
-  // }
-
-  onFinishFailed = (val) => {
-    console.log(val)
+    // form
+    validateMessages: {
+      required: '${label} 不可为空!',
+    },
   }
 
   valueChangeHandle = (blog) => {
@@ -50,16 +27,15 @@ export default class BookEdit extends React.Component {
   }
 
   fileSaveHandle = async () => {
+    const { validateFields } = bookForm.current
     try {
-      const values = await this.form.validateFields()
-      console.log('Success:', values)
+      const { chapterName, RelaType } = await validateFields()
+      const blogName = `${+new Date()}-${RelaType}-${chapterName}.md`
+      const blob = new Blob([this.state.blog], { type: 'text/plain;charset=utf-8' })
+      saveAs(blob, blogName)
     } catch (errorInfo) {
       console.log('Failed:', errorInfo)
     }
-    // console.log(this.form.validateFields());
-    // this.form.validateFields()
-    // const blob = new Blob([this.state.blog], { type: 'text/plain;charset=utf-8' })
-    // saveAs(blob, 'hello world.md')
   }
 
   render() {
@@ -67,7 +43,7 @@ export default class BookEdit extends React.Component {
       <>
         <Modal
           className={'book-edit-style'}
-          title={'Book Edit'}
+          title={'文章编辑'}
           width={'70%'}
           visible={this.props.visible}
           okText={'生成MD文档'}
@@ -77,7 +53,7 @@ export default class BookEdit extends React.Component {
             this.props.onCancel()
           }}
         >
-          <Form ref={this.form} className={'mb20'} layout={'inline'} initialValues={{ remember: false }} validateMessages={this.state.validateMessages}>
+          <Form ref={bookForm} className={'mb20'} layout={'inline'} initialValues={{ remember: false }} validateMessages={this.state.validateMessages}>
             <Form.Item style={{ width: 250 }} name="chapterName" label="标题" rules={[{ required: true }]}>
               <Input allowClear />
             </Form.Item>

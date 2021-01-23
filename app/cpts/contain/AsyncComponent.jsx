@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from 'react'
+
 import '~assets/css/anime/loading.scss'
 
 export default (importFunc) => {

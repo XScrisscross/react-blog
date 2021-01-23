@@ -1,15 +1,13 @@
 import React from 'react'
 import Router from '~router'
 // import Header from '~uiview/header/Header'
-import Footer from '~uiview/footer/Footer'
+// import Footer from '~uiview/footer/Footer'
 
 function App() {
   return (
     <div id="app">
       {/* <Header /> */}
-      {/* <div className="test"> */}
-      {/* </div> */}
-        <Router />
+      <Router />
       {/* <Footer /> */}
     </div>
   )

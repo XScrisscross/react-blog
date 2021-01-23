@@ -10,7 +10,7 @@ const files = require.context('./', true, /\.(MD|md)$/)
 const fetchFilesInfo = (files, filesInfo = []) => {
   filesInfo.push({
     chapterId: '0',
-    createTime: '9999999999999',
+    // createTime: '9999999999999',
     RelaType: 'INFO',
     typeName: '说明',
     chapterName: '维护日志',
@@ -22,10 +22,10 @@ const fetchFilesInfo = (files, filesInfo = []) => {
 
     filesInfo.push({
       chapterId: fileInfoArr[0],
-      createTime: fileInfoArr[1],
-      RelaType: fileInfoArr[2],
-      typeName: typeRelation[fileInfoArr[2]],
-      chapterName: fileInfoArr[3],
+      // createTime: fileInfoArr[1],
+      RelaType: fileInfoArr[1],
+      typeName: typeRelation[fileInfoArr[1]],
+      chapterName: fileInfoArr[2],
       chapterContent: files(file),
     })
   })
@@ -33,4 +33,4 @@ const fetchFilesInfo = (files, filesInfo = []) => {
   return filesInfo
 }
 
-export default Utils_Array.compose(Utils_Array.sortByFiled, Utils_Array.addActiveFirst)(fetchFilesInfo(files), 'createTime')
+export default Utils_Array.compose(Utils_Array.sortByFiled, Utils_Array.addActiveFirst)(fetchFilesInfo(files), 'chapterId')
