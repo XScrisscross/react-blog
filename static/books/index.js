@@ -5,12 +5,11 @@ const typeRelation = config.blogType.reduce((res, k) => {
   return { ...res, [k.type]: k.name }
 }, {})
 
-const files = require.context('./', true, /\.(MD|md)$/)
+const files = require.context('./', true, /\.(md)$/)
 
 const fetchFilesInfo = (files, filesInfo = []) => {
   filesInfo.push({
     chapterId: '0',
-    // createTime: '9999999999999',
     RelaType: 'INFO',
     typeName: '说明',
     chapterName: '维护日志',
@@ -22,7 +21,6 @@ const fetchFilesInfo = (files, filesInfo = []) => {
 
     filesInfo.push({
       chapterId: fileInfoArr[0],
-      // createTime: fileInfoArr[1],
       RelaType: fileInfoArr[1],
       typeName: typeRelation[fileInfoArr[1]],
       chapterName: fileInfoArr[2],

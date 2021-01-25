@@ -1,8 +1,9 @@
 ### 1. 说明
 
-- `blog-path`: < https://xscrisscross.vercel.app >
+基于`react`和`mdx`的博客小站
+
+- `blog-publish`: < https://xscrisscross.vercel.app/#/app/book >
 - `blog-source`: < https://github.com/XScrisscross/react-app-blog >
-- `publish-path`: < https://github.com/XScrisscross/xscrisscross.vercel >
 
 ### 2. 维护
 
@@ -25,8 +26,8 @@
 1. 根据 `types` 自动创建 `reducers`,生成 `reducers` 列表,对应关系 `key-action-ruducer`
 2. 添加处理异步请求的中间件,添加 `dispatch` 是 `log` 中间件等
 3. 添加`@mdx/loader`(处理 `md` 文件流解析),添加代码块高亮主题插件(默认 `github` 同款主题)
-4. `books` 动态引入,`loading` 动画,`book` 定义规则, 自定义部分 markdown 样式
+4. `books` 动态引入,`loading` 动画,`book` 定义规则, 自定义部分 `markdown` 样式
 
 - v1.25
 
-1. 完成基本的文档查看,切换,新增编辑md文档功能,先告一段落
+1. 完成基本的文档查看,切换,新增编辑 `md` 文档功能,先告一段落

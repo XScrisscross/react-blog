@@ -1,4 +1,13 @@
-### 测试
+### 地址
+
+- `blog-publish`: < https://xscrisscross.vercel.app/#/app/book >
+- `blog-source`: < https://github.com/XScrisscross/react-app-blog >
+
+### 思路
+
+- 开始是想做一个纯前端的静态 `blog` 小站作为学习或者管理记录一些日志,不写后台,也不买服务器,可以自己定义界面
+- 类似与生成组件文档的`react-docgen`,`vuepress`,使用`@mdx/loader`,`file-saver`可以将一些 `md` 文档配合 `react` 直接构建成一个静态网站
+- 在静态页面提供生成 `md` 文档的入口,定义命名规则,`md`放入指定的文件夹后,在`react`动态引入所有文件,根据命名规则将文件名解析并且分类展示
 
 ### webpack 配置
 
@@ -32,7 +41,7 @@ const resolve = {
     '~actions': path.resolve(__dirname, '../app/actions'),
     '~apis': path.resolve(__dirname, '../app/apis'),
     '~assets': path.resolve(__dirname, '../app/assets'),
-    '~books': path.resolve(__dirname, '../app/source/books'),
+    '~books': path.resolve(__dirname, '../static/books/index.js'),
     '~contain': path.resolve(__dirname, '../app/cpts/contain'),
     '~uiview': path.resolve(__dirname, '../app/cpts/uiview'),
     '~env': path.resolve(__dirname, '../app/env'),
@@ -72,10 +81,18 @@ const rules = {
       use: [
         {
           loader: MiniCssExtractPlugin.loader,
-          options: { publicPath: './css' },
+          options: { publicPath: '../' },
         },
         'css-loader',
-        'less-loader',
+        {
+          loader: 'less-loader',
+          options: {
+            lessOptions: {
+              modifyVars: { '@primary-color': '#ae976e' },
+              javascriptEnabled: true,
+            },
+          },
+        },
       ],
     },
     {
@@ -83,7 +100,7 @@ const rules = {
       use: [
         {
           loader: MiniCssExtractPlugin.loader,
-          options: { publicPath: './css' },
+          options: { publicPath: '../' },
         },
         'css-loader',
         'sass-loader',
@@ -113,13 +130,12 @@ const rules = {
       use: [
         {
           loader: 'url-loader',
-          options: { limit: 8192 },
+          options: {
+            limit: 8192,
+            outputPath: 'img',
+          },
         },
       ],
-    },
-    {
-      test: /\.(png|svg|jpg|gif)$/,
-      use: ['file-loader'],
     },
   ],
 }
@@ -224,7 +240,7 @@ module.exports = {
         default: {
           priority: -20,
           reuseExistingChunk: true,
-          filename: 'common.js',
+          filename: 'js/common.js',
         },
       },
     },
@@ -247,3 +263,7 @@ module.exports = {
   ],
 }
 ```
+
+---
+
+- 如有问题,欢迎指出!

@@ -41,18 +41,7 @@ export default class BookEdit extends React.Component {
   render() {
     return (
       <>
-        <Modal
-          className={'book-edit-style'}
-          title={'文章编辑'}
-          width={'70%'}
-          visible={this.props.visible}
-          okText={'生成MD文档'}
-          cancelText={'取消'}
-          onOk={this.fileSaveHandle}
-          onCancel={() => {
-            this.props.onCancel()
-          }}
-        >
+        <Modal className={'book-edit-style'} title={'文章编辑'} width={'70%'} visible={this.props.visible} okText={'生成MD文档'} cancelText={'取消'} onOk={this.fileSaveHandle} onCancel={() => this.props.onCancel()}>
           <Form ref={bookForm} className={'mb20'} layout={'inline'} initialValues={{ remember: false }} validateMessages={this.state.validateMessages}>
             <Form.Item style={{ width: 250 }} name="chapterName" label="标题" rules={[{ required: true }]}>
               <Input allowClear />
