@@ -3,7 +3,7 @@
 基于`react`和`mdx`的博客小站
 
 - `blog-publish`: < https://xscrisscross.vercel.app/#/app/book >
-- `blog-source`: < https://github.com/XScrisscross/react-app-blog >
+- `blog-source`: < https://github.com/XScrisscross/react-blog >
 
 ### 2. 维护
 
