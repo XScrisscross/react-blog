@@ -1,6 +1,6 @@
 ### 地址
 
-- `blog-publish`: < https://xscrisscross.vercel.app/#/app/book >
+- `blog-publish`: < https://xs-demo-pro.vercel.app/#/app/book >
 - `blog-source`: < https://github.com/XScrisscross/react-app-blog >
 
 ### 关于 React 的一些构建思路
@@ -8,7 +8,7 @@
 - `require.context()`函数可以动态引入文件吗,一些`api`,`utlis`,全局`config`挂载到`window`,可以全局不引入直接使用
 - 其他就是组件功能拆分,容器逻辑组件分离,结构分层分模块,主要看自己业务体量和代码怎么写的
 - 一些其他的`router`,`redux`(目前原则是一个 `key` 对应一个 `action` 对应一个 `reducer`)
-- 构建具体的在维护日志 < https://xscrisscross.vercel.app/#/app/book >,如有错误,欢迎指出!
+- 构建具体的在维护日志 < https://xs-demo-pro.vercel.app/#/app/book >,如有错误,欢迎指出!
 
 ### 动态引入
 

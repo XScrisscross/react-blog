@@ -1,6 +1,6 @@
 ### 地址
 
-- `blog-publish`: < https://xscrisscross.vercel.app/#/app/book >
+- `blog-publish`: < https://xs-demo-pro.vercel.app/#/app/book >
 - `blog-source`: < https://github.com/XScrisscross/react-app-blog >
 
 ### 代码块高亮
@@ -94,7 +94,7 @@ export default (props) => (
 
 - 主要的功能就是展示以及在线编辑处理文档(主要是定义命名规则)
 - 可以使用 `mdx` 语法,写一个`md`文档内容在线上保存处理后,放到文件夹`mdBooks`下即可
-- 一些细节可以看 < https://github.com/XScrisscross/react-app-blog > ,以及` blog` 维护日志 < https://xscrisscross.vercel.app/#/app/book >
+- 一些细节可以看 < https://github.com/XScrisscross/react-app-blog > ,以及` blog` 维护日志 < https://xs-demo-pro.vercel.app/#/app/book >
 
 ### 发布
 

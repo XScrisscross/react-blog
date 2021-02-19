@@ -1,6 +1,6 @@
 ### 地址
 
-- `blog-publish`: < https://xscrisscross.vercel.app/#/app/book >
+- `blog-publish`: < https://xs-demo-pro.vercel.app/#/app/book >
 - `blog-source`: < https://github.com/XScrisscross/react-app-blog >
 
 ### 思路
