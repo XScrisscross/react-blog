@@ -58,7 +58,7 @@
     "less-loader": "^6.2.0",
     "markdown-loader": "^6.0.0",
     "mini-css-extract-plugin": "^0.10.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^7.0.0",
     "redux-devtools": "^3.7.0",
     "resolve-url-loader": "^3.1.2",
     "sass-loader": "^9.0.3",
